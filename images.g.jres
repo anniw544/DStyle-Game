@@ -1,0 +1,12 @@
+{
+    "image1": {
+        "data": "hwQYABgAAAC7u8zMzMzMzMzMzMzbvbu7u7u7u7u7y8zbu8y8u7u7u7vMvMzbu728u7u7u7u9vMzbu728u7u7u7u9vMzbu8y8u7u7u7vMvMzbu7u7u7u7u7u7u8zbu7u7u7u7u7u7u8zbu7u7u7u7u7u7u8zbu7u7u7u7u7u7u8zbu7u7u7u7u7u7u8zbu7u7u7u7u7u7u8zbu7u7u7u7u7u7u8zbu7u7u7u7u7u7u8zbu7u7u7u7u7u7u8zbu7u7u7u7u7u7u8zbu7u7u7u7u7u7u8zbu7u7u7u7u7u7u8zbu8y8u7u7u7vMvMzbu728u7u7u7u9vMzbu728u7u7u7u9vMzbu8y8u7u7u7vMvMzbvbu7u7u7u7u7y8y7u8zMzMzMzMzMzMw=",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "smallIndustrial1"
+    },
+    "*": {
+        "mimeType": "image/x-mkcd-f4",
+        "dataEncoding": "base64",
+        "namespace": "myImages"
+    }
+}
