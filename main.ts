@@ -2,51 +2,32 @@ namespace SpriteKind {
     export const Wall = SpriteKind.create()
 }
 controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
-    let py = 0
-    let px = 0
-    PPB = sprites.create(img`
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . 3 3 3 . . . . . . . 
-        . . . . . 3 3 2 3 3 . . . . . . 
-        . . . . . 3 2 3 2 3 . . . . . . 
-        . . . . . 3 3 2 3 3 . . . . . . 
-        . . . . . . 3 3 3 . . . . . . . 
+    projectile = sprites.createProjectileFromSprite(img`
         . . . . . . . . . . . . . . . . 
         . . . . . . . . . . . . . . . . 
         . . . . . . . . . . . . . . . . 
         . . . . . . . . . . . . . . . . 
         . . . . . . . . . . . . . . . . 
         . . . . . . . . . . . . . . . . 
-        `, SpriteKind.Projectile)
-    PPB.setPosition(px, py)
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . 2 2 . . . . . . . 
+        . . . . . . . 2 2 . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        `, Render.getRenderSpriteInstance(), Render.getAttribute(Render.attribute.dirX), Render.getAttribute(Render.attribute.dirX))
 })
-controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
+controller.menu.onEvent(ControllerButtonEvent.Pressed, function () {
     Render.toggleViewMode()
 })
-let PPB: Sprite = null
+let projectile: Sprite = null
+scroller.scrollBackgroundWithCamera(scroller.CameraScrollMode.BothDirections, scroller.BackgroundLayer.Layer4)
 tiles.setCurrentTilemap(tilemap`level 1`)
-scene.setBackgroundImage(assets.image`C_F`)
-let mySprite = sprites.create(img`
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    `, SpriteKind.Player)
 let e1 = sprites.create(assets.image`myImage`, SpriteKind.Enemy)
 info.setLife(3)
+Render.moveWithController(2, 3, 1)
+let WGun = 1
